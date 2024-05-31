@@ -1,0 +1,925 @@
+/*fondo de la pagina*/
+
+body {
+    background-color: rgb(49, 4, 80);
+}
+
+/*color de la letra "contenido de la pagina"*/
+
+h1 {
+    color: white;
+}
+
+
+
+
+
+
+/* estilo registro */
+
+.registro-form {
+    width: 60%; /* Haciendo el formulario más pequeño */
+    margin: 50px auto;
+    background-color: #e6e6ff;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.registro-form h2 {
+    text-align: center;
+}
+
+.registro-form .campo {
+    margin-bottom: 20px;
+}
+
+.registro-form .campo label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.registro-form textarea {
+    width: calc(100% - 20px); /* Restamos el espacio del padding */
+    height: 80px; /* Reduciendo la altura del textarea */
+    padding: 5px;
+}
+
+.registro-form .campo-small textarea {
+    width: calc(100% - 20px); /* Restamos el espacio del padding */
+}
+
+.registro-form .subscripcion-label {
+    margin-left: 10px;
+}
+
+.registro-form .imagen-upload {
+    margin-top: 20px;
+}
+
+.registro-form .imagen-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.registro-form .imagen-placeholder {
+    width: 120px; /* Haciendo el cuadro negro más grande */
+    height: 120px; /* Haciendo el cuadro negro más grande */
+    background-color: #000;
+}
+
+.registro-form .imagen-container input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.registro-form .imagen-container button {
+    margin-left: 10px;
+}
+
+.registro-form .botones {
+    text-align: center;
+}
+
+.registro-form .botones button {
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+/*Estilos ingresar*/
+
+.container {
+    width: 300px;
+    margin: 50px auto; /* Centra el contenedor horizontalmente */
+    text-align: center; /* Centra el contenido del contenedor */
+}
+
+/* Estilos específicos para el formulario de ingreso */
+.container > div {
+    background-color: #e6e6ff; /* Color de fondo del cuadro morado claro */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Espacio entre el cuadro y el siguiente elemento */
+}
+
+/* Estilos para los títulos específicos del formulario de ingreso */
+.container > div h2 {
+    margin-bottom: 20px; /* Espacio debajo del título */
+    display: inline-block; /* Para que el título esté en línea con los demás elementos */
+}
+
+/* Estilos para los campos de entrada dentro del formulario de ingreso */
+.container > div input {
+    width: calc(100% - 20px); /* Ancho del 100% menos el espacio del padding */
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilos para el botón de ingreso dentro del formulario de ingreso */
+.container > div button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(49, 4, 80); /* Color de fondo del botón */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Espacio debajo del botón */
+}
+
+/* Estilos para los enlaces dentro del formulario de ingreso */
+.container > div a {
+    display: block;
+    margin-bottom: 5px; /* Espacio entre los enlaces */
+}
+
+
+
+
+
+
+
+/*Index*/
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px; /* Espacio entre los cuadros y los lados de la página */
+}
+
+.product {
+    /*flex: 0 0 calc(33.33% - 40px);*/ /* Espacio entre productos y margen lateral */
+    margin-bottom: 20px;
+    max-width: 400px; /* Ancho máximo del producto */
+}
+
+.product-frame {
+    border: 2px solid #8a2be2; /* Grosor reducido del borde */
+    border-radius: 10px; /* Aumento del radio de borde */
+    padding: 15px; /* Aumento del relleno */
+    background-color: #f2e6ff; /* Púrpura suave */
+    width: 100%; /* Forzar el ancho al 100% */
+    height: auto; /* Altura automática */
+}
+
+.product-image {
+    max-width: 100%; /* Tamaño máximo de la anchura de la imagen */
+    max-height: 200px; /* Altura máxima de la imagen */
+    display: block; /* Evita espacios en blanco debajo de las imágenes */
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+    border-radius: 8px; /* Aumento del radio de borde para la imagen */
+}
+
+.product-info {
+    padding-top: 10px; /* Aumento del espacio superior */
+    text-align: center;
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 16px; /* Aumento del tamaño del texto */
+    margin-bottom: 5px; /* Aumento del espacio inferior */
+}
+
+.product-available {
+    color: green;
+    font-size: 14px; /* Aumento del tamaño del texto */
+}
+
+.product-price {
+    color: blue;
+    font-size: 14px; /* Aumento del tamaño del texto */
+    margin-bottom: 5px; /* Aumento del espacio inferior */
+}
+
+.product-description {
+    font-size: 12px; /* Aumento del tamaño del texto */
+    line-height: 1.4; /* Aumento del espacio entre líneas */
+}
+
+.product-stock {
+    font-size: 12px; /* Aumento del tamaño del texto */
+    color: #666; /* Color de texto gris */
+    margin-top: 5px; /* Aumento del espacio superior */
+}
+
+.btn {
+    margin-top: 10px; /* Aumento del espacio superior */
+    color: white;
+    padding: 8px 20px; /* Aumento del espacio alrededor del botón */
+    border-radius: 5px; /* Aumento del radio de borde */
+    cursor: pointer;
+}
+
+.btn-purple-dark {
+    background-color: #6b1c96; /* Púrpura oscuro */
+}
+
+.btn-purple-dark:hover {
+    background-color: #4a146f; /* Púrpura más oscuro al pasar el mouse */
+}
+
+
+
+
+
+
+
+
+/* Estilos nosotros */
+
+.about-us-container {
+    width: 60%; /* Ancho del contenedor */
+    margin: 50px auto; /* Centra el contenedor horizontalmente */
+    background-color: #e6e6ff; /* Color de fondo gris */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+}
+
+.about-us-container h2 {
+    text-align: center; /* Centra el título */
+    color: #000; /* Color del texto negro */
+}
+
+.about-info {
+    margin-top: 20px;
+    text-align: center; /* Centra el contenido */
+}
+
+.about-info p {
+    color: #000; /* Color del texto negro */
+}
+
+.ceo-images {
+    margin-top: 20px;
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    justify-content: space-around; /* Distribuye los elementos a lo largo del eje principal */
+}
+
+.ceo-info {
+    text-align: center; /* Centra el contenido */
+    margin-top: 5px; /* Espacio superior */
+}
+
+.ceo-info img {
+    width: 150px; /* Tamaño de las imágenes */
+    height: 150px;
+    border: 1px solid #000; /* Borde para resaltar el área de la imagen */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 5px; /* Espacio inferior entre la imagen y los elementos de texto */
+}
+
+.ceo-name,
+.ceo-lastname,
+.ceo-position {
+    margin-top: 5px; /* Espacio superior */
+    margin-bottom: 5px; /* Espacio inferior */
+}
+
+
+
+
+/*ficha producto*/
+.ficha-producto {
+    background-color: #dcdcdc; /* Color gris para el fondo */
+    padding: 20px;
+    max-width: 800px; /* Ancho máximo del cuadro de la ficha */
+    margin: 0 auto; /* Centra el cuadro horizontalmente */
+    display: flex; /* Utiliza flexbox para alinear elementos */
+    flex-direction: row; /* Alinea los elementos en fila */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+/* Estilos para la imagen del producto */
+.ficha-producto .imagen-producto {
+    flex: 1; /* La imagen ocupa todo el espacio disponible */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.ficha-producto .imagen-producto img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la información del producto */
+.ficha-producto .informacion-producto {
+    background-color: #9370DB; /* Color púrpura suave */
+    padding: 10px;
+    flex: 2; /* El texto ocupa el doble de espacio que la imagen */
+}
+
+/* Estilos para el nombre del producto */
+.ficha-producto .nombre-producto {
+    margin-bottom: 5px;
+}
+
+/* Estilos para el stock disponible */
+.ficha-producto .stock-disponible {
+    margin-bottom: 5px;
+}
+
+.ficha-producto .verde {
+    color: green; /* Color de texto verde */
+}
+
+/* Estilos para el precio */
+.ficha-producto .precio {
+    margin-bottom: 10px;
+    font-weight: bold; /* Texto en negrilla */
+    font-size: 18px; /* Tamaño de fuente más grande */
+}
+
+/* Estilos para la descripción */
+.ficha-producto .descripcion {
+    margin-bottom: 10px;
+}
+
+/* Estilos para los botones */
+.ficha-producto button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #4b0082; /* Color púrpura más oscuro */
+    color: #fff; /* Color de texto blanco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ficha-producto button:hover {
+    background-color: #6a5acd; /* Color púrpura más claro al pasar el mouse */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para el contenedor del carrito */
+.carrito-container {
+    background-color: #dcdcdc; /* Color gris para el fondo */
+    padding: 20px;
+    width: 80%; /* Ancho del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Estilos para la tabla del carrito */
+.carrito-tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.carrito-tabla th, .carrito-tabla td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Estilos para los botones de opciones */
+.eliminar-btn {
+    background-color: #ff0000; /* Color rojo para el botón */
+    color: #fff; /* Color de texto blanco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.eliminar-btn:hover {
+    background-color: #cc0000; /* Color rojo más oscuro al pasar el mouse */
+}
+
+/* Estilos para el total del carrito */
+.carrito-total {
+    margin-top: 20px;
+}
+
+.carrito-total p {
+    margin-bottom: 10px;
+}
+
+/* Estilos para los botones de cancelar y pagar */
+.cancelar-btn, .pagar-btn {
+    background-color: #4b0082; /* Color púrpura oscuro para los botones */
+    color: #fff; /* Color de texto blanco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+.cancelar-btn:hover, .pagar-btn:hover {
+    background-color: #6a5acd; /* Color púrpura más claro al pasar el mouse */
+}
+
+
+
+
+
+
+/*Estilos Miscompras*/
+/* Estilos específicos para miscompras.html */
+.carrito-total {
+    float: right; /* Mover el bloque a la derecha */
+    margin-left: 20px; /* Espacio entre la tabla y el bloque */
+    text-align: right; /* Alinear el texto a la derecha */
+}
+
+.carrito-total p {
+    font-weight: bold; /* Hacer que todos los párrafos dentro de .carrito-total estén en negrita */
+}
+
+.carrito-container {
+    overflow: auto; /* Clearfix para contener elementos flotantes */
+}
+
+
+
+
+
+/*ESTILO PARA EL FOOTER*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4b0082; /* Morado oscuro */
+    color: #ffffff; /* Letras blancas */
+    text-align: center;
+    height: 50px; /* Altura pequeña del footer */
+    line-height: 50px; /* Alineación vertical del texto */
+    display: none; /* Ocultar el footer al principio */
+}
+
+#footer.footer-show {
+    display: block; /* Mostrar el footer cuando el usuario llega al final de la página */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.footer-text {
+    white-space: nowrap; /* Evitar saltos de línea en el texto */
+}
+
+.footer-text p {
+    display: inline-block;
+    margin: 0 10px; /* Espacio entre los elementos de texto */
+}
+
+/* Espacio entre el contenido principal y el footer */
+#main-content {
+    padding-bottom: 100px; /* Ajusta el espacio entre el contenido principal y el footer */
+}
+
+
+
+
+/* ESTILO COMPRAS ANTERIORES*/
+
+
+.compras-container h2 {
+    color: white;
+}
+
+
+/*ESTILO MIS DATOS */
+
+
+/* Estilos específicos para la página misdatos.html y la clase .datos-form */
+/* Selecciona el formulario de datos dentro de la clase datos-form */
+.datos-form {
+    width: 50%; /* Haciendo el formulario más pequeño */
+    margin: 50px auto;
+    background-color: #e6e6ff;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Centra el título del formulario */
+.datos-form h2 {
+    text-align: center;
+}
+
+/* Estilos para los campos del formulario */
+.datos-form .campo {
+    margin-bottom: 20px;
+}
+
+/* Estilos para la etiqueta de los campos */
+.registro-form .campo label {
+    display: block;
+    margin-bottom: 5px;
+    color: black; /* Color del texto negro */
+}
+
+/* Estilos específicos para el texto dentro del input type text */
+.registro-form input[type="text"] {
+    color: black; /* Color del texto negro */
+    font-weight: bold; /* Haciendo la letra en negrita */
+
+}
+
+.registro-form input[type=""] {
+    color: black; /* Color del texto negro */
+    font-weight: bold; /* Haciendo la letra en negrita */
+
+}
+
+/* Estilos específicos para textarea dentro de la clase .campo */
+.datos-form textarea {
+    width: calc(100% - 20px); /* Restamos el espacio del padding */
+    height: 80px; /* Reduciendo la altura del textarea */
+    padding: 5px;
+}
+
+/* Estilos específicos para textarea dentro de la clase .campo-small */
+.datos-form .campo-small textarea {
+    width: calc(100% - 20px); /* Restamos el espacio del padding */
+}
+
+/* Estilos para la etiqueta de subscripción */
+.datos-form .subscripcion-label {
+    margin-left: 10px;
+    font-weight: bold; /* Haciendo la letra en negrita */
+    color: black; /* Color del texto negro */
+}
+
+/* Estilos para el contenedor de la imagen */
+.datos-form .imagen-upload {
+    margin-top: 20px;
+}
+
+/* Estilos para el contenedor de la imagen */
+.datos-form .imagen-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el cuadro negro de la imagen */
+.datos-form .imagen-placeholder {
+    width: 120px; /* Haciendo el cuadro negro más grande */
+    height: 120px; /* Haciendo el cuadro negro más grande */
+    background-color: #000;
+}
+
+/* Estilos para el input de la imagen */
+.datos-form .imagen-container input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Estilos para el botón en el contenedor de la imagen */
+.datos-form .imagen-container button {
+    margin-left: 10px;
+}
+
+/* Estilos para los botones del formulario */
+.datos-form .botones {
+    text-align: center;
+}
+
+/* Estilos para los botones del formulario */
+.datos-form .botones button {
+    margin-right: 10px;
+}
+
+/* Estilo para el texto dentro de los campos de texto */
+.datos-form input[type="text"]::placeholder,
+.datos-form textarea::placeholder {
+    color: black;
+    font-weight: bold;
+}
+
+/* Estilo para la contraseña y el correo */
+.datos-form input[type="password"],
+.datos-form input[type="email"] {
+    color: black; /* Color del texto negro */
+    font-weight: bold; /* Haciendo la letra en negrita */
+}
+
+
+
+/* Estilos para el cuadro negro de la imagen */
+.datos-form .imagen-placeholder {
+    width: 100px; /* Ajustando el ancho a 2px */
+    height: 80px; /* Ajustando la altura a 2px */
+    background-color: #000;
+    background-image: url('img/'); /* Ruta a la imagen */
+    background-size: cover; /* Cubrir completamente el cuadro */
+    background-position: center; /* Centrar la imagen dentro del cuadro */
+}
+
+
+
+.concurso-subtitulo {
+    color: black; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilos para los productos del concurso */
+.producto-concurso {
+    background-color: purple; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilos para las imágenes de los productos del concurso */
+.producto-concurso img {
+    width: 100%; /* Establece el ancho al 100% del contenedor padre */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 100%; /* Ajustamos el ancho máximo */
+}
+
+/* Estilos para la descripción de los productos */
+.producto-concurso .descripcion {
+    color: white; /* Color del texto */
+}
+
+
+
+
+
+
+/* Estilos personalizados para el formulario 
+.form-control {
+    height: 40px; /* Ajustar altura de los campos de entrada */
+
+.col-form-label {
+    font-size: 20px; /* Tamaño de la etiqueta */
+}
+
+.btn-usuarios {
+    margin-top: 30px; /* Espacio entre los botones */
+}
+
+.usuarios-content {
+    width: 80%; /* Ancho del contenido */
+    margin: auto; /* Centrar contenido */
+}
+
+/* Estilos personalizados */
+.usuarios-container {
+    width: 80%; /* Ancho del contenedor al 80% */
+    margin: auto; /* Centrar el contenedor */
+    color: white;
+}
+
+
+
+
+
+/* Estilos personalizados para el formulario
+.form-control {
+    height: 60px; /* Ajustar altura de los campos de entrada */*/
+
+.col-form-label {
+    font-size: 20px; /* Tamaño de la etiqueta */
+}
+
+.btn-usuarios {
+    margin-top: 30px; /* Espacio entre los botones */
+}
+
+.usuarios-content {
+    width: 80%; /* Ancho del contenido */
+    margin: auto; /* Centrar contenido */
+}
+
+/* Estilos personalizados */
+.usuarios-container {
+    width: 80%; /* Ancho del contenedor al 80% */
+    margin: auto; /* Centrar el contenedor */
+    color: white;
+}
+
+
+/* Estilos para concurso-titulo y concurso-subtitulo */
+.concurso-titulo,
+.concurso-subtitulo {
+    color: white;
+}
+
+
+
+.btn-success{
+    color:#000;
+}
+
+
+
+
+/*RESPONSIVIDAD DE ELEMENTOS*/
+
+/* Estilos CSS para hacer la página responsiva */
+
+/* Navbar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Carrusel */
+#carrusel-container {
+    margin-bottom: 20px;
+}
+
+/* Productos */
+.products-container .product {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Añade estilos responsivos */
+/* Ajusta el tamaño de las imágenes de los productos */
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ajusta el tamaño del texto en los productos para pantallas pequeñas */
+.product-info {
+    font-size: 14px;
+}
+
+/* Ajusta el tamaño de los botones en los productos para pantallas pequeñas */
+.btn {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Ajusta el tamaño del texto en la barra de navegación para pantallas pequeñas */
+.navbar-brand,
+.navbar-nav .nav-link {
+    font-size: 16px;
+}
+
+/* Ajusta el tamaño del logotipo en la barra de navegación para pantallas pequeñas */
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ajusta el tamaño del botón de la barra de navegación para pantallas pequeñas */
+.navbar-toggler {
+    font-size: 16px;
+}
+
+label {
+    font-weight: bolder;
+}
+
+
+
+
+/* Estilos de boton ver detalles de mis compras anteriores */
+
+.ver-detalle {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ver-detalle:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilos Mantenedor de productos*/
+
+/* estilo productos */
+
+.productos-form {
+    width: 70%; /* Haciendo el formulario más pequeño */
+    margin: 50px auto;
+    background-color: #e6e6ff;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.productos-form h2 {
+    text-align: center;
+}
+
+.productos-form .campo {
+    margin-bottom: 20px;
+}
+
+.productos-form .campo label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.productos-form textarea {
+    width: calc(100% - 20px); /* Restamos el espacio del padding */
+    height: 80px; /* Reduciendo la altura del textarea */
+    padding: 5px;
+}
+
+.productos-form .campo-small textarea {
+    width: calc(100% - 20px); /* Restamos el espacio del padding */
+}
+
+.productos-form .subscripcion-label {
+    margin-left: 10px;
+}
+
+.productos-form .imagen-upload {
+    margin-top: 20px;
+}
+
+.productos-form .imagen-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.productos-form .imagen-placeholder {
+    width: 120px; /* Haciendo el cuadro negro más grande */
+    height: 120px; /* Haciendo el cuadro negro más grande */
+    background-color: #000;
+}
+
+.productos-form .imagen-container input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.productos-form .imagen-container button {
+    margin-left: 10px;
+}
+
+.productos-form .botones {
+    text-align: center;
+}
+
+.productos-form .botones button {
+    margin-right: 10px;
+}
+
+/*selecion de categoria*/
+
+.transparent-placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Establece el color del texto semi-transparente */
+}
+
+/*css usuarios */
+
+.is-invalid {
+    border-color: red;
+}
+
+.invalid-feedback {
+    display: none;
+    color: red;
+}
