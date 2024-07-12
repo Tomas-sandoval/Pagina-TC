@@ -1,0 +1,74 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2 style="color: white; text-align: center text-white;">Mis datos</h2>
+
+<div class="registro-form">
+  <div class="container-fluid">
+    <form id="registro-form">
+      <div class="row">
+        <div class="col">
+          <div class="form-group text-white">
+            <label for="rut">Rut:</label>
+            <input type="text" class="form-control" id="rut" name="rut" placeholder="Ingrese su Rut..." value="11111111-1">
+          </div>
+          <div class="form-group text-white">
+            <label for="nombres">Nombres:</label>
+            <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingrese su nombre..." value="Anthony Edward">
+          </div>
+          <div class="form-group text-white">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingrese sus apellidos..." value="Stark">
+          </div>
+          <div class="form-group text-white">
+            <label for="correo">Correo:</label>
+            <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese su correo..." value="tony@gmail.com">
+          </div>
+          <div class="form-group campo-small text-white">
+            <label for="direccion">Dirección:</label>
+            <textarea id="direccion" name="direccion" class="form-control" placeholder="Ingrese su dirección...">Stark tower, 1111</textarea>
+          </div>
+          <div class="form-group text-white">
+            <label>Subscripción:</label>
+            <div class="subscripcion">
+                <input type="checkbox" id="subscripcion" name="subscripcion" checked>
+                <label for="subscripcion" class="subscripcion-label">Deseo subscribirme con un aporte de $3000 mensuales y obtener un 5% de descuento en mis compras</label>
+            </div>
+          </div>
+          <div class="form-group text-white">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña...">
+          </div>
+          <div class="form-group text-white">
+            <label for="repetir_contrasena">Repetir contraseña:</label>
+            <input type="password" class="form-control" id="repetir_contrasena" name="repetir_contrasena" placeholder="Repita su contraseña...">
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3 row">
+            <div class="col-sm-9">
+              <img src="{% static 'core/img/tony.jpg' %}" alt="Imagen de perfil" style="max-width: 100%; max-height: 100%;" />
+              <br><br>
+              <input type="file" accept="image/*" name="profile_image" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones de acción -->
+      <div style="text-align: center">
+        <button id="id_btnGuardar" type="submit" class="btn btn-success" style="background-color: #310450; color: white">Guardar</button>
+        <button id="id_btnLimpiar" type="reset" class="btn btn-success" style="background-color: #310450; color: white">Limpiar</button>
+      </div>
+    </form>
+  </div>
+</div>
+&nbsp;
+{% endblock content %}
+
+{% block script %}
+  <script src="{% static 'js/script.js' %}"></script>
+  <!-- Incluye otros scripts si son necesarios -->
+{% endblock script %}

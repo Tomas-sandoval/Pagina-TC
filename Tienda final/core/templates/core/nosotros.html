@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+  
+<div class="about-us-container">
+  <h2>Acerca de Nosotros</h2>
+  <div class="about-info">
+    <p>
+      Gummy games es mucho más que una tienda de videojuegos; somos una
+      comunidad dedicada a brindar la mejor experiencia de juego. Nos
+      enorgullece ofrecer una amplia gama de juegos, desde los clásicos
+      hasta los más recientes lanzamientos, junto con una variedad de
+      accesorios para mejorar tu experiencia de juego. Nuestro compromiso
+      con la satisfacción del cliente es insuperable, y nuestro equipo
+      liderado por Tomas Sandoval y Catherine Nuñez trabaja arduamente para
+      garantizar que cada cliente reciba un servicio excepcional. Desde
+      consultas sobre productos hasta recomendaciones de juegos, estamos
+      aquí para ayudarte en cada paso del camino. Únete a nuestra comunidad
+      y descubre el mundo de los videojuegos con Gummy games.
+    </p>
+    <!-- Aquí van las imágenes y la información -->
+    <div class="ceo-images">
+      <div class="ceo-info">
+        <img src="{% static 'core/img/henry.jpg' %}" alt="CEO 1" />
+        <div class="ceo-name">Tomas</div>
+        <div class="ceo-lastname">Sandoval</div>
+        <div class="ceo-position">CEO</div>
+        <a href="">tomas.GG@gmail.com</a>
+      </div>
+      <div class="ceo-info">
+        <img src="{% static 'core/img/helena.avif' %}" alt="CEO 2" />
+        <div class="ceo-name">Catherine</div>
+        <div class="ceo-lastname">Nuñez</div>
+        <div class="ceo-position">COO</div>
+        <a href="">catherine.GG@gmail.com</a>
+      </div>
+      <div class="ceo-info">
+        <img src="{% static 'core/img/tony.jpg' %}" alt="CEO 1" />
+        <div class="ceo-name">Sebastian</div>
+        <div class="ceo-lastname">Soto</div>
+        <div class="ceo-position">Empleado</div>
+        <a href="">sebastian.GG@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</div>
+&nbsp;
+{% endblock content %}

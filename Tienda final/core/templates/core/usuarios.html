@@ -1,0 +1,136 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+    <h2 style="color: white; text-align: center;">Mantenedor de usuarios</h2>
+
+    <form id="form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="productos-form">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="id">ID:</label>
+                            <input type="number" class="form-control" id="id" placeholder="Ingrese el ID del usuario" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                            <div class="invalid-feedback">Solo se pueden utilizar números.</div>
+                            {{ form_usuario.id|as_bootstrap_field }}
+                        </div>
+                        &nbsp;
+                        <div class="form-group">
+                            <label>Tipo de usuario:</label><br>
+                            <label for="cliente">Cliente</label>
+                            <input type="radio" id="cliente" name="tipo_usuario" value="cliente">
+                            <label for="administrador">Administrador</label>
+                            <input type="radio" id="administrador" name="tipo_usuario" value="administrador">
+                            <div class="invalid-feedback">Debe seleccionar un tipo de usuario.</div>
+                            {{ form_usuario.tipo_usuario|as_bootstrap_field }}
+                        </div>
+                        &nbsp;
+                        <div class="form-group">
+                            <label for="Rut">Rut:</label>
+                            <input type="text" class="form-control" id="Rut" name="Rut" placeholder="Ingrese el rut del usuario">
+                            <div class="invalid-feedback">Rut inválido.</div>
+                            {{ form_perfil.Rut|as_bootstrap_field }}
+                        </div>
+                        <div class="form-group">                            
+                            {{ form_usuario.first_name|as_bootstrap_field }}
+                        </div>
+                        <div class="form-group">                        
+                            {{ form_usuario.last_name|as_bootstrap_field }}
+                        </div>
+                        <div class="form-group">
+                        
+                            {{ form_usuario.email|as_bootstrap_field }}
+                        </div>
+                        <div class="form-group campo-small">                            
+                            {{ form_perfil.direccion|as_bootstrap_field }}
+                        </div>
+                        <div class="form-group">
+                                {{ form_perfil.subscrito|as_bootstrap_field }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3 row">
+                            <div class="col-sm-9">
+                                {% if form_perfil.imagen.value %}
+                                    <img id="cuadro-imagen" src="/media/{{ form_perfil.imagen.value }}" style="max-width: 70%; max-height: 70%;" />
+                                {% else %}
+                                    <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}" style="max-width: 70%; max-height: 70%;" />
+                                {% endif %}
+                                <br><br>
+                                {{ form_perfil.imagen|as_bootstrap_field }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de acción -->
+                <div style="text-align: center">
+                    <button type="submit" class="btn btn-secondary">Generar contraseña</button>
+                    <button type="submit" class="btn btn-success" style="background-color: #310450; color: white">Guardar</button>
+                    <a href="{% url 'usuarios' 'crear' '0' %}" class="btn btn-success" style="background-color: #310450; color: white">Nuevo</a>
+                    {% if form_usuario.instance.id %}
+                        <a class="btn btn-danger" href="{% url 'usuarios' 'eliminar' form_usuario.instance.id %}">Eliminar</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- AREA DE TABLA DE USUARIOS -->
+    {% if usuarios %}
+        <table id="tabla-principal" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cuenta</th>
+                    <th>Tipo usuario</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>RUT</th>
+                    <th>Subscrito</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                    <tr>
+                        <td>{{ usuario.id }}</td>
+                        <td>{{ usuario.username }}</td>
+                        <td>{{ usuario.perfil.tipo_usuario }}</td>
+                        <td>{{ usuario.first_name }}</td>
+                        <td>{{ usuario.last_name }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>{{ usuario.perfil.rut }}</td>
+                        <td>{% if usuario.perfil.subscrito %} Sí {% else %} No {% endif %}</td>
+                        <td>
+                            <img src="/media/{{ usuario.perfil.imagen }}" class="usuario-sm" alt="">
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="{% url 'usuarios' 'actualizar' usuario.id %}" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="{% url 'usuarios' 'eliminar' usuario.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                                <form action="{% url 'cambiar_password' %}" method="post" id="form_{{ usuario.username }}">
+                                    {% csrf_token %}
+                                    <input type="hidden" id="username" name="username" value="{{ usuario.username }}">
+                                    <button class="btn btn-info btn-sm" id="id_generar_password" onclick="document.getElementById('form_{{ usuario.username }}').submit();">Contraseña</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock content %}
+
+{% block script %}
+    <script src="{% static 'core/js/usuarios.js' %}"></script>
+        &nbsp;
+{% endblock script %}

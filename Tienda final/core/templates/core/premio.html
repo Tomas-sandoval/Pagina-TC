@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+
+<div>
+  <div class="row">
+    <h1>Concurso de ropa</h1>
+    <br><br><br>
+    <div id="recuadro-de-ropa"></div>
+  </div>
+  <div>
+    
+  </div>
+</div>
+
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'core/js copy/ropa.js' %}"></script>
+<script type="text/javascript" src="{% static 'core/js/script.js' %}"></script>
+  
+{% endblock script %}

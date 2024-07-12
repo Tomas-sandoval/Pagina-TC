@@ -1,0 +1,90 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+
+<div id="carrusel-container">
+  <div id="mi-carrusel">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="max-width: 800px; margin: auto;">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'core/img/halocarrusel.jpg' %}" class="d-block w-100" style="object-fit: cover; max-width: 1000px; height: auto;" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'core/img/minecraftcarrusel.jpg' %}" class="d-block w-100" style="object-fit: cover; max-width: 1200px; height: auto;" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'core/img/slimecarrusel.jpg' %}" class="d-block w-100" style="object-fit: cover; max-width: 1200px; height: auto;" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'core/img/callofdutycarrusel.avif' %}" class="d-block w-100" style="object-fit: cover; max-width: 1200px; height: auto;" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'core/img/ittakecarrusel.jpg' %}" class="d-block w-100" style="object-fit: cover; max-width: 1200px; height: auto;" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'core/img/shadowcarrusel.webp' %}" class="d-block w-100" style="object-fit: cover; max-width: 1200px; height: auto;" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+  <!-- Cuadro para el concurso -->
+  <div class="col-sm-12 col-md-6 col-lg-3 col-xl-2">
+    <a href="{% url 'premio' %}">
+      <img class="cuadro-concurso" src="{% static '/core/img/cartel.png' %}" alt="Concurso" />
+      <!-- Aquí debes reemplazar 'ruta_imagen_concurso.jpg' con la ruta de tu imagen -->
+    </a>
+  </div>
+
+  {% if productos %}
+  
+    <div class="container-fluid">
+      <div class="row">
+        {% for producto in productos %}
+            <div class="product col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="product-frame">
+                  <img
+                    src="/media/{{ producto.imagen }}"
+                    alt="Juego 1"
+                    class="product-image"
+                  />
+                  <div class="product-info justify-content-center">
+                    <p class="product-name">{{ producto.nombre }}</p>
+                    <p class="product-available">{{ producto.html_estado|safe }}</p>
+                    <p class="product-price"><strong>{{ producto.html_precio|safe }}</strong></p>
+                    <p class="product-description">Descripción del juego 1.</p>
+                    <p class="product-stock">{{ producto.html_stock }}</p>
+
+                    <a href="{% url 'ficha' producto.id %}" class="btn btn-purple-dark">
+                      Comprar
+                    </a>
+
+                    <a href="{% url 'agregar_producto_al_carrito' producto.id %}" class="btn btn-secondary"> 
+                      Agregar al carrito 
+                    </a>
+                    
+                  </div>
+                </div>
+            </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  {% else %}
+
+    <h2>No se encontraron productos</h2>
+
+  {% endif %}
+
+{% endblock content %}

@@ -1,0 +1,92 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+    
+   
+        &nbsp;&nbsp;&nbsp;
+        <a href="{% url 'boleta' 1 %}">Ver boleta 1</a><br><br>
+    </div>
+    
+    <!-- AREA DE TABLA: Datos de las boletas de compras del cliente (VER COMENTARIO "TABLA AVANZADA" en script.js) -->
+    <table id="tabla-principal" class="table table-hover">
+        <thead>
+            <tr>
+                <th> Categoría </th>
+                <th> Producto </th>
+                <th> Precio </th>
+                <th> %Suscriptor </th>
+                <th> %Oferta </th>
+                <th> %Desc total </th>
+                <th> Descuentos </th>
+                <th> Precio a pagar </th>
+            </tr>
+        </thead> 
+        <tbody>
+            <!-- Aquí integrarías los datos de la tabla del carrito -->
+            <tr>
+                <td>coop</td>
+                <td>It take two</td>
+                <td>20.000</td>
+                <td>5%</td>
+                <td>5%</td>
+                <td>10%</td>
+                <td>2.000</td>
+                <td>18.000</td>
+            </tr>
+            <!-- Repite estas filas según sea necesario -->
+        </tbody>       
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    Precio sin IVA
+                </td>
+                <td>
+                    <input type="text" readonly
+                        name="precio_sin_iva" id="precio_sin_iva"
+                        value="18.000">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    Valor del IVA (19%)
+                </td>
+                <td>
+                    <input type="text" readonly
+                        name="valor_del_iva" id="valor_del_iva"
+                        value="2.547">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    Total a pagar
+                </td>
+                <td>
+                    <input type="text" readonly
+                        name="total_a_pagar" id="total_a_pagar"
+                        value="20.547">
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock content %}
