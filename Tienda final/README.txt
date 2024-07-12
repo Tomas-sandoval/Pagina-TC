@@ -4,3 +4,4 @@ Integrantes
 	Sebastian Soto 001D se.sotof@duocuc.cl
 
 GitHub 
+	https://github.com/Tomas-sandoval/Pagina-TC
